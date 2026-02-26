@@ -32,23 +32,25 @@ function PostList() {
     }
   };
 
-  if (loading) return <p>Loading posts...</p>;
-  if (error) return <p>Error: {error}</p>;
-  if (!posts.length) return <p>No posts yet</p>;
+
+
+  if (loading) return <div className="loading-message">Loading posts...</div>;
+  if (error) return <div style={{textAlign:'center',marginTop:'48px',color:'#ed4956',fontWeight:600}}>Error: {error}</div>;
+  if (!posts.length) return <div className="empty-message">No posts available</div>;
 
   return (
     <div>
       <h2>Posts</h2>
-      <ul>
+      <div className="post-grid">
         {posts.map((post) => (
-          <li key={post.id} style={{ marginBottom: '1rem' }}>
-            <img src={post.imageUrl || ''} alt={post.title} width="150" />
+          <div className="post-card" key={post.id}>
+            <img src={post.imageUrl || ''} alt={post.title} />
             <h3>{post.title}</h3>
             <p>{post.description}</p>
-            <button onClick={() => handleDelete(post.id)}>Delete</button>
-          </li>
+            <button className="post-action-btn" onClick={() => handleDelete(post.id)}>Delete</button>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

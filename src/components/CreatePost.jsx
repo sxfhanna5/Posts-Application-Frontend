@@ -31,34 +31,38 @@ function CreatePost() {
   };
 
   return (
-    <div>
+    <div className="form-outer card-form">
       <h2>Create Post</h2>
-      {error && <p style={{ color: 'red' }}>Error: {error}</p>}
-      <form onSubmit={handleSubmit}>
-        <div>
+      {error && <p style={{ color: '#ed4956', fontWeight: 600, marginBottom: 16 }}>Error: {error}</p>}
+      <form onSubmit={handleSubmit} autoComplete="off">
+        <div className="input-card">
           <label>Image URL:</label>
           <input
             type="text"
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
             required
+            className="input-soft"
           />
         </div>
-        <div>
+        <div className="input-card">
           <label>Title:</label>
           <input
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
+            className="input-soft"
           />
         </div>
-        <div>
+        <div className="input-card">
           <label>Description:</label>
-          <textarea
+          <input
+            type="text"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             required
+            className="input-soft"
           />
         </div>
         <button type="submit" disabled={submitting}>
