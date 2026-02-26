@@ -4,6 +4,8 @@
 
   ],
   "rewrites": [
+    { "source": "/posts", "destination": "https://posts-application-backend.vercel.app/posts" },
+    { "source": "/posts/(.*)", "destination": "https://posts-application-backend.vercel.app/posts/$1" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
