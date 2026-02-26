@@ -1,4 +1,5 @@
 // central configuration values
-// Default to localhost at port 1234, matching backend default port.
-// (Can be overridden via VITE_API_URL environment variable.)
-export const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:1234';
+// When running in development we proxy requests to the backend (see
+// vite.config.js) so the base URL can be empty.  In production you can
+// set VITE_API_URL to the full backend URL (e.g. https://api.example.com).
+export const API_URL = import.meta.env.VITE_API_URL || '';
