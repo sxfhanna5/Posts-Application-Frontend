@@ -42,7 +42,7 @@ function PostList() {
       <ul>
         {posts.map((post) => (
           <li key={post.id} style={{ marginBottom: '1rem' }}>
-            <img src={post.imageUrl || post.image || ''} alt={post.title} width="150" />
+            <img src={post.imageUrl || ''} alt={post.title} width="150" />
             <h3>{post.title}</h3>
             <p>{post.description}</p>
             <button onClick={() => handleDelete(post.id)}>Delete</button>

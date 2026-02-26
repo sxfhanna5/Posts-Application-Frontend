@@ -16,7 +16,9 @@ function CreatePost() {
     setSubmitting(true);
     try {
       await sendPost({ imageUrl, title, description });
-      // clear form (optional)
+      setImageUrl('');
+      setTitle('');
+      setDescription('');
       setImageUrl('');
       setTitle('');
       setDescription('');

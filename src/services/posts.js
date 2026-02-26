@@ -1,6 +1,7 @@
 import { API_URL } from '../config';
 
 export async function fetchPosts() {
+ 
   const response = await fetch(`${API_URL}/posts`);
   if (!response.ok) {
     const err = new Error('Failed to load posts');
